@@ -1,0 +1,18 @@
+# *** NO MODIFIQUE ESTA CELDA ***
+
+# importamos la librería requerida, utilizando un nombre corto
+import meteodatos as mtd
+
+# leemos el archivo de datos
+archivo = '330075_202303_Temperatura.csv'
+datos = mtd.leer_archivo(archivo)
+
+# seleccionamos el día requerido y obtenemos sus estadísticas de temperatura
+dia = '2023-03-31'
+tmax, tmin, tmedia = mtd.estadisticas_dia(datos, dia)
+
+# presentamos los resultados
+print(f'Las estadísticas para el día {dia} son:')
+print(f'temperatura máxima: {tmax} °C')
+print(f'temperatura mínima: {tmin} °C')
+print(f'temperatura promedio: {tmedia} °C')
