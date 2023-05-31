@@ -1,0 +1,32 @@
+`import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cargar los datos del archivo CSV
+data = pd.read_csv('330075_202303_Temperatura.csv')
+
+# Gráfico de temperaturas del día 1 de marzo
+fig, ax = plt.subplots()
+ax.plot(data['Hora'], data['ts'])
+ax.set_xlabel('Hora')
+ax.set_ylabel('Temperatura (°C)')
+ax.set_title('Temperaturas del día 1 de marzo')
+plt.show()
+
+# Gráfico de temperaturas máximas para todo el mes de marzo
+fig, ax = plt.subplots()
+ax.plot(data['Día'], data['Tmáx'], 'o-', label='Temperatura máxima')
+ax.set_xlabel('Día')
+ax.set_ylabel('Temperatura (°C)')
+ax.set_title('Temperaturas máximas del mes de marzo')
+ax.legend()
+plt.show()
+
+# Gráfico de temperaturas máximas y mínimas para todo el mes de marzo
+fig, ax = plt.subplots()
+ax.plot(data['Día'], data['Tmáx'], 'o-', label='Temperatura máxima')
+ax.plot(data['Día'], data['Tmín'], 'o-', label='Temperatura mínima')
+ax.set_xlabel('Día')
+ax.set_ylabel('Temperatura (°C)')
+ax.set_title('Temperaturas máximas y mínimas del mes de marzo')
+ax.legend()
+plt.show()
